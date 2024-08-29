@@ -39,3 +39,19 @@ struct node* insert_after(struct node* root, struct node* elem, int var){
     }
     return root_cp;
 }
+
+struct node* insert_before(struct node* root, struct node* elem, int var){
+    struct node* root_cp = root;
+    while(root_cp->next!=elem || root_cp->next!=NULL){
+        root_cp=root_cp->next;
+    }
+    if(root_cp->next!=NULL){
+        struct node* new_elem = init(var);
+        struct node* pref_elem = root_cp->next;
+        new_elem->pref=root_cp;
+        new_elem->next=pref_elem;
+        root_cp->next=new_elem;
+        pref_elem->pref=new_elem;
+    }
+    return root_cp;
+}
