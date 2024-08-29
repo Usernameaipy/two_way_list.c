@@ -78,3 +78,10 @@ struct node* print_pref(struct node* root){
     }
     return first;
 }
+
+void delete_list(struct node* root) {
+    if (root) {
+        delete_list(root->next);
+        free(root);
+    }
+}
