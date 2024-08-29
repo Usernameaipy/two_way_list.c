@@ -8,7 +8,7 @@ struct node* init(int var){
     return root;
 }
 
-struct node* add(struct node* root, int var){
+struct node* insert(struct node* root, int var){
     int trig=0;
     struct node* elem=init(var);
     if(root==NULL){
@@ -23,4 +23,19 @@ struct node* add(struct node* root, int var){
         elem->pref=root_cp;
     }
     return elem;
+}
+
+struct node* insert_after(struct node* root, struct node* elem, int var){
+    struct node* root_cp = root;
+    while(root_cp!=elem || root_cp!=NULL){
+        root_cp=root_cp->next;
+    }
+    if(root_cp!=NULL){
+        struct node* next_elem = root_cp->next;
+        struct node* new_elem = init(var);
+        new_elem->next=next_elem;
+        new_elem->pref=root_cp;
+        root_cp->next=new_elem;
+    }
+    return root_cp;
 }

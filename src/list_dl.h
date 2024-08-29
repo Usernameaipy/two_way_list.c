@@ -8,8 +8,8 @@ struct node {
     struct node* next;
 };
 struct node* init(int);
-struct node* add(struct node*, int);
-struct node* insert_after(struct node*, int);
-struct node* insert_before(struct node*, int);
+struct node* insert(struct node*, int);
+struct node* insert_after(struct node*,struct node*, int);
+struct node* insert_before(struct node*, struct node*, int);
 void delete_list(struct node*);
 #endif
