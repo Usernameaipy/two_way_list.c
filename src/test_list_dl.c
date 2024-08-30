@@ -62,6 +62,20 @@ void test_insert_before(int var){
     delete_list(root);
 }
 
+void test_index(int var, int pos){
+    printf("TEST_INDEX\n");
+    struct node* root=init(1);
+    insert(root, 2);
+    insert(root, 3);
+    insert(root, 4);
+    int index=search_index(root, var);
+    if(index==pos){
+        success();
+    }
+    else fail();
+    delete_list(root);
+}
+
 int main(){
     test_init(TEST_INIT_ONE);
     test_init(TEST_INIT_TWO);
@@ -75,5 +89,7 @@ int main(){
     test_insert_before(TEST_INSERT_BEFORE_ONE);
     test_insert_before(TEST_INSERT_BEFORE_TWO);
     test_insert_before(TEST_INSERT_BEFORE_THREE);
+    test_index(TEST_SEARCH_INDEX_ONE, 1);
+    test_index(TEST_SEARCH_INDEX_TWO, -1);
     return 0;
 }

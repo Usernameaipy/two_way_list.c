@@ -79,6 +79,16 @@ struct node* print_pref(struct node* root){
     return first;
 }
 
+int search_index(struct node* root, int elem){
+    int index=0;
+    struct node* root_cp=root;
+    while(root_cp!=NULL && root_cp->variable!=elem){
+        root_cp=root_cp->next;
+        index+=1;
+    }
+    return (root_cp!=NULL) ? index : -1;
+}
+
 void delete_list(struct node* root) {
     if (root) {
         delete_list(root->next);

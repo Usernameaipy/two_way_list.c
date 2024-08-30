@@ -7,6 +7,7 @@ void test_init(int);
 void test_insert(int);
 void test_insert_after(int);
 void test_insert_before(int);
+void test_index(int, int);
 #define TEST_INIT_ONE 8
 #define TEST_INIT_TWO 'c'
 #define TEST_INIT_THREE 72000
@@ -19,4 +20,6 @@ void test_insert_before(int);
 #define TEST_INSERT_BEFORE_ONE 78
 #define TEST_INSERT_BEFORE_TWO 'o'
 #define TEST_INSERT_BEFORE_THREE 72000
+#define TEST_SEARCH_INDEX_ONE 2
+#define TEST_SEARCH_INDEX_TWO 'j'
 #endif

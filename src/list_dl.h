@@ -13,5 +13,6 @@ struct node* insert_after(struct node*,struct node*, int);
 struct node* insert_before(struct node*, struct node*, int);
 struct node* print_next(struct node*);
 struct node* print_pref(struct node*);
+int search_index (struct node*, int);
 void delete_list(struct node*);
 #endif
